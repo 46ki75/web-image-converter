@@ -59,6 +59,6 @@ This project is licensed under the **MIT License**.
 
 > [!NOTE]
 > Since this library uses **Rust crates compiled to WebAssembly with static linking**, third-party licenses of all linked dependencies are automatically bundled into the NPM package.
-> You can find the list of these licenses in the included `THIRD_PARTY_LICENSES` or equivalent file.
+> You can find the list of these licenses in the included `LICENSE` or equivalent file.
 >
 > This ensures compliance with all licenses, including transitive dependencies of the WebAssembly module.
