@@ -1,0 +1,26 @@
+Third Party Licenses
+
+This file lists the licenses of the projects used in `web-image-converter`.
+
+================================================================================
+Overview of Licenses
+================================================================================
+
+{{#each overview}}
+- {{name}} ({{count}} crates)
+{{/each}}
+
+================================================================================
+All License Texts
+================================================================================
+
+{{#each licenses}}
+--------------------------------------------------------------------------------
+License: {{name}}
+Used by:
+{{#each used_by}}
+- {{crate.name}} {{crate.version}} ({{#if crate.repository}}{{crate.repository}}{{else}}https://crates.io/crates/{{crate.name}}{{/if}})
+{{/each}}
+
+{{text}}
+{{/each}}
