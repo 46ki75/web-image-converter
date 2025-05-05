@@ -3,4 +3,4 @@ install:
 
 build:
 	wasm-pack build --target web
-	cargo about generate about.hbs > ./pkg/license.html
+	cargo about generate about.hbs > ./pkg/LICENSE
