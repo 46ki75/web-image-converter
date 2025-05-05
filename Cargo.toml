@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+image = { version = "0.25.6", features = ["webp"] }
 wasm-bindgen = "0.2.100"
 
 [lib]
