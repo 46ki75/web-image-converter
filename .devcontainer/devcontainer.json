@@ -1,5 +1,5 @@
 {
-  "name": "Template Dev Container",
+  "name": "web-image-converter Dev Container",
   "build": {
     "dockerfile": "Dockerfile"
   },
@@ -19,19 +19,10 @@
         "yzhang.markdown-all-in-one",
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-
         // Rust
         "rust-lang.rust-analyzer",
         "tamasfe.even-better-toml",
-        "fill-labs.dependi",
-
-        // .NET
-        "ms-dotnettools.csharp",
-        "ms-dotnettools.csdevkit",
-        "ms-dotnettools.vscodeintellicode-csharp",
-
-        // Terraform
-        "HashiCorp.terraform"
+        "fill-labs.dependi"
       ]
     }
   },
@@ -39,21 +30,10 @@
   "features": {
     "ghcr.io/devcontainers-extra/features/starship": {},
     "ghcr.io/devcontainers/features/github-cli": {},
-
-    // AWS
-    "ghcr.io/devcontainers/features/aws-cli": {},
-
     // Node.js
     "ghcr.io/devcontainers/features/node": {},
-
     // Rust
-    "ghcr.io/devcontainers/features/rust": {},
-
-    // .NET
-    "ghcr.io/devcontainers/features/dotnet": {},
-
-    // Terraform
-    "ghcr.io/devcontainers/features/terraform": {}
+    "ghcr.io/devcontainers/features/rust": {}
   },
   "postCreateCommand": "echo 'eval \"$(starship init bash)\"' >> ~/.bashrc"
 }
