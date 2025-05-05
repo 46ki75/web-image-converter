@@ -253,7 +253,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "web_image_converter"
+name = "web-image-converter"
 version = "0.1.0"
 dependencies = [
  "image",
