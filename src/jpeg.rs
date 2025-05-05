@@ -9,7 +9,7 @@ pub fn jpeg() -> JpegOption {
 #[wasm_bindgen]
 #[derive(Debug, Clone, Copy, Default)]
 pub struct JpegOption {
-    pub quality: u8,
+    quality: u8,
 }
 
 #[wasm_bindgen]
