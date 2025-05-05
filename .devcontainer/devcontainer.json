@@ -1,0 +1,59 @@
+{
+  "name": "Template Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {},
+      "extensions": [
+        "GitHub.vscode-pull-request-github",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "github.vscode-github-actions",
+        "usernamehw.errorlens",
+        "Gruntfuggly.todo-tree",
+        "christian-kohler.path-intellisense",
+        "ms-azuretools.vscode-docker",
+        "DavidAnson.vscode-markdownlint",
+        "yzhang.markdown-all-in-one",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+
+        // Rust
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "fill-labs.dependi",
+
+        // .NET
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.vscodeintellicode-csharp",
+
+        // Terraform
+        "HashiCorp.terraform"
+      ]
+    }
+  },
+  "forwardPorts": [],
+  "features": {
+    "ghcr.io/devcontainers-extra/features/starship": {},
+    "ghcr.io/devcontainers/features/github-cli": {},
+
+    // AWS
+    "ghcr.io/devcontainers/features/aws-cli": {},
+
+    // Node.js
+    "ghcr.io/devcontainers/features/node": {},
+
+    // Rust
+    "ghcr.io/devcontainers/features/rust": {},
+
+    // .NET
+    "ghcr.io/devcontainers/features/dotnet": {},
+
+    // Terraform
+    "ghcr.io/devcontainers/features/terraform": {}
+  },
+  "postCreateCommand": "echo 'eval \"$(starship init bash)\"' >> ~/.bashrc"
+}
