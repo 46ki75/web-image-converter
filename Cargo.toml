@@ -1,8 +1,13 @@
 [package]
-name = "web_image_converter"
+name = "web-image-converter"
+description = "Convert images directly in the browser using WebAssembly — no server or Node.js required."
 version = "0.1.0"
 edition = "2024"
 license = "MIT"
+authors = ["Chomolungma Shirayuki"]
+repository = "https://github.com/46ki75/web-image-converter"
+documentation = "https://github.com/46ki75/web-image-converter"
+keywords = ["image", "bmp", "jpeg", "png", "webp"]
 readme = "./README.md"
 
 [dependencies]
