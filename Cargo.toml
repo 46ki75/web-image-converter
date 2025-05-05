@@ -2,9 +2,15 @@
 name = "web_image_converter"
 version = "0.1.0"
 edition = "2024"
+license = "MIT"
 
 [dependencies]
-image = { version = "0.25.6", features = ["webp"] }
+image = { version = "0.25.6", features = [
+    "bmp",
+    "jpeg",
+    "png",
+    "webp",
+], default-features = false }
 wasm-bindgen = "0.2.100"
 
 [lib]
