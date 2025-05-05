@@ -53,6 +53,23 @@ const toBmp = async (image: Uint8Array): Promise<Uint8Array> => {
 > [!TIP]
 > To avoid blocking the main UI thread during image processing, it is **strongly recommended** to use this library inside a **Web Worker**.
 
+## Vite Development Server Configuration
+
+When using Vite, WebAssembly modules may encounter MIME type issues during development. To resolve this, exclude `web-image-converter` from dependency optimization:
+
+```ts
+// vite.config.ts
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  // ...
+  optimizeDeps: {
+    exclude: ["web-image-converter"],
+  },
+  // ...
+});
+```
+
 ## License
 
 This project is licensed under the **MIT License**.
