@@ -1,60 +1,64 @@
-# template-devcontainer
+# web-image-converter
+
+Convert images directly in the browser using WebAssembly — no server or Node.js required.
+
+## Features
+
+- 🖼️ Convert images to **PNG**, **JPEG**, **WebP**, or **BMP**
+- 🧠 Automatically detects input format
+- ⚙️ Powered by Rust & WebAssembly
+- 💡 Runs entirely in the browser (frontend only)
+
+## Installation
 
 ```bash
-npx degit 46ki75/template-devcontainer
+npm install web-image-converter
 ```
 
-## Custom Features for Local Development
+## Usage
 
-Create a directory at `.devcontainer/features/<YOUR_FEATURE_NAME>` containing following files:
+```ts
+import init, { jpeg, png, webp, bmp } from "web-image-converter";
 
-- `devcontainer-feature.json`: Metadata describing the feature.
-- `install.sh`: Shell script to install the feature.
+const toPng = async (image: Uint8Array): Promise<Uint8Array> => {
+  await init();
+  return png().convert(image);
+};
 
-### `devcontainer-feature.json`
+const toJpeg = async (image: Uint8Array): Promise<Uint8Array> => {
+  await init();
+  return jpeg().convert(image);
+};
 
-- `id`: Identifier for this feature.
-- `installAfter`: Specifies dependencies that must be installed before this feature.
-- `customizations.vscode`: VSCode settings and extensions to apply when this features is used.
+const toWebp = async (image: Uint8Array): Promise<Uint8Array> => {
+  await init();
+  return webp().convert(image);
+};
 
-```json
-{
-  "id": "cargo-binstall",
-  "name": "cargo-binstall (via cargo)",
-  "version": "1.0.0",
-  "customizations": {
-    "vscode": {
-      "settings": {
-        "[rust]": { "editor.defaultFormatter": "rust-lang.rust-analyzer" }
-      },
-      "extensions": ["rust-lang.rust-analyzer"]
-    }
-  },
-  "installsAfter": ["ghcr.io/devcontainers/features/rust"]
-}
+const toBmp = async (image: Uint8Array): Promise<Uint8Array> => {
+  await init();
+  return bmp().convert(image);
+};
 ```
 
-### `install.sh`
+### Input
 
-Dev Container features are defined using simple shell scripts.
+- `image`: `Uint8Array` containing the image data.
+- Format (JPEG, PNG, WebP, BMP) is **auto-detected**.
 
-```bash
-#!/bin/bash
+### Output
 
-set -e -u -o pipefail
+- `Uint8Array` containing the converted image.
 
-USERNAME="${USERNAME:-"vscode"}"
+> [!TIP]
+> To avoid blocking the main UI thread during image processing, it is **strongly recommended** to use this library inside a **Web Worker**.
 
-su "${USERNAME}" -c "curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash"
-su "${USERNAME}" -c "cargo binstall just cargo-lambda --no-confirm"
+## License
 
-echo "Done!"
+This project is licensed under the **MIT License**.
 
-# Add your custom installation steps below ---
-```
-
-### Need More Information?
-
-Exploring the actual implementations in [Available Dev Container Features](https://containers.dev/features) is the best way to learn how to create your own.
-
-For detailed specifications, see the [Dev Container metadata reference](https://containers.dev/implementors/json_reference/).
+> [!NOTE]
+> Since this library uses **Rust crates compiled to WebAssembly with static linking**, third-party licenses of all linked dependencies are automatically bundled into the NPM package.
+> You can find the list of these licenses in the included `THIRD_PARTY_LICENSES.md` or equivalent file.
+>
+> This ensures compliance with all licenses, including transitive dependencies of the WebAssembly module.
