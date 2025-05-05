@@ -1,12 +1,12 @@
 version: 2
 updates:
-  - package-ecosystem: "terraform"
-    directory: "/terraform"
+  - package-ecosystem: "cargo"
+    directory: "/"
     schedule:
       interval: "daily"
     target-branch: "main"
     labels:
-      - "Terraform"
+      - "Rust"
     assignees:
       - "46ki75"
     reviewers:
