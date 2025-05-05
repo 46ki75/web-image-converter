@@ -7,20 +7,13 @@ pub fn png() -> PngOption {
 
 #[wasm_bindgen]
 #[derive(Debug, Clone, Copy, Default)]
-pub struct PngOption {
-    pub quality: u8,
-}
+pub struct PngOption {}
 
 #[wasm_bindgen]
 impl PngOption {
     #[wasm_bindgen(constructor)]
     pub fn new() -> Self {
         Self::default()
-    }
-
-    pub fn quality(mut self, quality: u8) -> Self {
-        self.quality = quality;
-        self
     }
 
     pub fn convert(&self, image_bytes: &[u8]) -> Result<Vec<u8>, JsError> {
