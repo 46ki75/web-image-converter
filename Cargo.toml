@@ -17,7 +17,7 @@ image = { version = "0.25.6", features = [
     "png",
     "webp",
 ], default-features = false }
-wasm-bindgen = "0.2.100"
+wasm-bindgen = "0.2.101"
 
 [lib]
 crate-type = ["cdylib"]
