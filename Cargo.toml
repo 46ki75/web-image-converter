@@ -11,7 +11,7 @@ keywords = ["image", "bmp", "jpeg", "png", "webp"]
 readme = "./README.md"
 
 [dependencies]
-image = { version = "0.25.8", features = [
+image = { version = "0.25.9", features = [
     "bmp",
     "jpeg",
     "png",
