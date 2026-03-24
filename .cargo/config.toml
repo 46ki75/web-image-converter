@@ -1,0 +1,3 @@
+[env]
+CC_wasm32_unknown_unknown = "/opt/wasi-sdk/bin/clang"
+CFLAGS_wasm32_unknown_unknown = "--sysroot=/opt/wasi-sdk/share/wasi-sysroot --target=wasm32-wasi"
