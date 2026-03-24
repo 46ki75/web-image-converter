@@ -1,5 +1,5 @@
 install:
-	cargo install cargo-license cargo-about
+	cargo install --locked cargo-license cargo-about wasm-pack
 
 build:
 	wasm-pack build --target web
